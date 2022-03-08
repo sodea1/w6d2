@@ -5,18 +5,18 @@ require 'active_support/inflector'
 
 class SQLObject
   def self.columns
-    # ...
+    @columns.each { |col| col.to_sym }
   end
 
   def self.finalize!
   end
 
   def self.table_name=(table_name)
-    # ...
+    @table_name = table_name
   end
 
   def self.table_name
-    # ...
+    @table_name
   end
 
   def self.all
